@@ -8,7 +8,7 @@ app.get('/' , (req, res)=>{
 })
 
 app.get('/login', (req,res)=>{
-    res.send('<h2>Login to continue!</h2>')
+    res.send('<h3>Login to continue!</h3>')
 })
 app.listen(port, ()=>{
     console.log(`Listening to port ${port}`);
