@@ -1,10 +1,13 @@
 import express from 'express';
 import cors from 'cors';
 import pool from './db.js';
-
+import dotenv from 'dotenv';
+dotenv.config();
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+let PORT = process.env.PORT;
 
 // Get all exercises
 app.get('/exercises', async (req, res) => {
@@ -111,4 +114,4 @@ app.post('/schedule', async (req, res) => {
 
 
 
-app.listen(4000, () => console.log('Server running at http://localhost:4000'));
+app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
