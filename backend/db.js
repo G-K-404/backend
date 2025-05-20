@@ -1,9 +1,12 @@
 // backend/db.js
 import pkg from 'pg';
+import dotenv from dotenv;
 const { Pool } = pkg;
 
+dotenv.config();
+
 const pool = new Pool({
-  connectionString: 'postgresql://postgres.vmzobkzlbwvqktrpcefq:Avinash69420!@aws-0-us-east-2.pooler.supabase.com:5432/postgres',
+  connectionString: process.env.DATABASE_URL,
   ssl: {
     rejectUnauthorized: false
   }
