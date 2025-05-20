@@ -15,7 +15,7 @@ app.get('/exercises', async (req, res) => {
     res.json(exercises);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Failed to fetch exercises' });
+    res.status(500).json({ error: 'Failed to fetch exercises due to '+error.message });
   }
 });
 
